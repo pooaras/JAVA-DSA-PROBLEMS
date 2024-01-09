@@ -25,7 +25,7 @@ public class GraphBFS {
         while(!que.isEmpty() ){
             source=que.remove(0);
             System.out.println(source);
-            Iterator<Integer> i=graph[source].iterator();
+            Iterator<Integer> i=graph[source].iterator();//we don't now how many elements of internal structure...
             while(i.hasNext()){
                 int cur=(int)i.next();
                 if(visited[cur]!=true)
@@ -37,7 +37,7 @@ public class GraphBFS {
     }
     public void DFS(int source){//using stack and boolean array for DFS
         boolean b[]=new boolean[v];
-        Stack<Integer> stac=new Stack<>();
+        Stack<Integer> stac=new Stack<>();  
         stac.push(source);
         int cur;
         while(stac.isEmpty()!=true){
@@ -77,3 +77,23 @@ public class GraphBFS {
         ob.DFS(0);
     }   
 }
+
+/*
+ * BFS
+ * step1:create a boolean visited array and queue for FIFO
+ * step2:Insert into visited boolean array true and add in queue
+ * step3:while queue is not empty pop first element as source and 
+ *       print it.
+ * step4:Inside the loop iterator<Integer> to iterate the queue[source] 
+ *      and create while if hasNext() then each next is not visited then
+ *      add into queue and mark visited as true.
+ * 
+ * DFS
+ * step1:create a boolean visited array and stack for LIFO
+ * step2:Insert source into stack
+ * step3:while stack is not empty then pop out the peek element then it stored
+ *      as source.
+ * step4:Inside the loop for while iterate Graph[source].size() for each element
+ *       is not visited then insert into stack
+ * step5:last inside the loop if(source not visited) then true and print the element.
+ */

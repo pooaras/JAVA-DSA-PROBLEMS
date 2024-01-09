@@ -4,7 +4,7 @@ import java.util.*;
 
 public class MaxNbythree{
     public static List<Integer> majorityElement(int[] nums) {
-        HashMap<Integer,Integer> hm=new HashMap<>();
+        Hashmap<Integer,Integer> hm=new Hashmap<>();
         List<Integer> ls=new ArrayList<>();
         int c=0;
         int n=nums.length/2;
